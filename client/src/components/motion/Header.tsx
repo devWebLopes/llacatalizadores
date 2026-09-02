@@ -25,6 +25,7 @@ interface HeaderProps {
 const DEFAULT_NAV = [
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#materiais", label: "Materiais" },
+  { href: "#faq", label: "Dúvidas (FAQ)" },
   { href: "#contato", label: "Contato" },
 ];
 

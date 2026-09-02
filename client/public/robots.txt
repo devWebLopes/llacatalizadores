@@ -1,0 +1,31 @@
+# robots.txt for https://llacatalisadores.vercel.app/
+User-agent: *
+Allow: /
+
+# Motores de Busca e Indexadores de IA (GEO / LLM Search Optimization)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://llacatalisadores.vercel.app/sitemap.xml

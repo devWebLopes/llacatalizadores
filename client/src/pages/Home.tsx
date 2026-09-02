@@ -66,6 +66,55 @@ const materials = [
   },
 ];
 
+const acceptedMaterialsList = [
+  {
+    category: "Catalisadores Automotivos",
+    items: [
+      "Catalisadores cerâmicos (linha leve, nacional e importada)",
+      "Catalisadores metálicos de alta vazão e competição",
+      "Filtros de partículas DPF para motores a diesel (caminhonetes, vans e utilitários)",
+      "Catalisadores de linha pesada (caminhões e ônibus sob consulta prévia)",
+    ],
+  },
+  {
+    category: "Metais & Sucatas Automotivas",
+    items: [
+      "Sucatas automotivas selecionadas com valor agregado",
+      "Metais não-ferrosos e carcaças para reciclagem especializada",
+      "Atendimento para oficinas, centros automotivos e desmanches credenciados",
+      "Pesagem transparente com critério técnico direto na bancada",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: "A LLA aceita catalisador diesel?",
+    answer:
+      "Sim. Avaliamos catalisadores de veículos a diesel (incluindo caminhonetes, vans, utilitários e linha pesada), além de filtros de partículas DPF. A análise é feita presencialmente na bancada ou por foto via WhatsApp com critério técnico.",
+  },
+  {
+    question: "Como funciona o pagamento? O valor é pago à vista?",
+    answer:
+      "O pagamento pela compra do seu catalisador ou sucata automotiva é realizado à vista, na hora da negociação, logo após a conferência, identificação do código e pesagem na nossa bancada.",
+  },
+  {
+    question: "O processo e a avaliação têm garantia de transparência?",
+    answer:
+      "Sim. Nosso compromisso é com a conferência aberta e critérios técnicos objetivos. Você acompanha a identificação do modelo (cerâmico, metálico ou DPF) e a pesagem do material sem rodeios.",
+  },
+  {
+    question: "Como solicitar uma avaliação inicial por foto?",
+    answer:
+      "Basta fotografar com nitidez o código estampado na carcaça e a peça inteira, e enviar para o nosso WhatsApp (51) 98193-5442. Nossa equipe orienta a estimativa e o procedimento para recebimento.",
+  },
+  {
+    question: "Quais outros materiais automotivos são recebidos?",
+    answer:
+      "Além de catalisadores automotivos de todas as marcas e modelos, compramos metais e sucatas automotivas selecionadas. Consulte nossa equipe para checar as condições e materiais aceitos no momento.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden">
@@ -266,6 +315,94 @@ export default function Home() {
               </AnimatedCard>
             ))}
           </div>
+
+          {/* Lista semântica técnica para SEO & GEO */}
+          <Reveal className="mt-12 border-t border-white/10 pt-10">
+            <div className="grid gap-8 md:grid-cols-2">
+              {acceptedMaterialsList.map((category) => (
+                <div key={category.category} className="space-y-4">
+                  <h4 className="eyebrow flex items-center gap-2 text-white/85">
+                    <span className="h-1.5 w-1.5 bg-[#e83a2d]" />
+                    {category.category}
+                  </h4>
+                  <ul className="space-y-2.5">
+                    {category.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 font-sans text-xs leading-5 text-white/65"
+                      >
+                        <span className="font-mono text-[#e83a2d]">›</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-5 text-xs text-white/45">
+              <span>* Condições, cotações e critérios validados presencialmente na bancada.</span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-[#e83a2d]">
+                LLA / Triagem Técnica
+              </span>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* FAQ — Dúvidas Frequentes                                           */}
+      {/* ------------------------------------------------------------------ */}
+      <section
+        id="faq"
+        className="border-b border-[#17191b]/10 bg-[#f7f5f0] py-24 md:py-32"
+      >
+        <div className="container">
+          <div className="grid gap-12 md:grid-cols-[.8fr_1.5fr] md:gap-24">
+            <Reveal>
+              <div className="eyebrow red-mark mb-6">04 / dúvidas frequentes</div>
+              <h2 className="display max-w-[360px] text-6xl md:text-8xl">
+                Perguntas <span className="text-[#e83a2d]">diretas.</span>
+              </h2>
+              <p className="mt-7 max-w-[330px] text-sm leading-7 text-[#666a6d]">
+                Esclarecemos os critérios de compra, materiais aceitos e formas
+                de pagamento para você negociar com transparência e segurança.
+              </p>
+              <div className="mt-8">
+                <TactileLink
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 border border-[#17191b]/30 px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#17191b] hover:border-[#e83a2d] hover:bg-[#e83a2d] hover:text-white"
+                >
+                  Tirar outra dúvida no WhatsApp <WhatsAppIcon size={15} />
+                </TactileLink>
+              </div>
+            </Reveal>
+
+            <div className="divide-y divide-[#17191b]/15 border-t border-[#17191b]/15">
+              {faqs.map((faq, index) => (
+                <details
+                  key={faq.question}
+                  className="group py-6 open:pb-8"
+                  {...(index === 0 ? { open: true } : {})}
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-display text-2xl uppercase tracking-tight text-[#17191b] transition-colors group-hover:text-[#e83a2d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e83a2d]">
+                    <span className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-[#e83a2d]">0{index + 1}</span>
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      size={20}
+                      className="mt-1 flex-shrink-0 text-[#e83a2d] transition-transform duration-300 group-open:rotate-180"
+                    />
+                  </summary>
+                  <p className="mt-4 max-w-[580px] pl-7 text-sm leading-relaxed text-[#55585b]">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -279,7 +416,7 @@ export default function Home() {
         <div className="container">
           <div className="grid gap-12 md:grid-cols-[1.1fr_.9fr] md:items-end">
             <Reveal>
-              <div className="eyebrow red-mark mb-6">04 / fale com a LLA</div>
+              <div className="eyebrow red-mark mb-6">05 / fale com a LLA</div>
               <h2 className="display max-w-[680px] text-6xl md:text-[7rem]">
                 Vamos olhar isso <span className="text-[#e83a2d]">juntos?</span>
               </h2>

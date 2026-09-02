@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#111315"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#e83a2d" stroke-width="2" stroke-opacity="0.3"/>
+  <!-- LLA Typography / Icon Mark -->
+  <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Barlow Condensed', 'Arial Black', sans-serif" font-weight="900" font-size="30" fill="#ffffff" letter-spacing="-1">LLA</text>
+  <circle cx="53" cy="41" r="4.5" fill="#e83a2d"/>
+</svg>

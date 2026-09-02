@@ -7,6 +7,7 @@ Registro numerado de planejamentos de tarefas. Novos planos incrementam o númer
 | 001 | [`plan-001-estrutura-inicial.md`](./plan-001-estrutura-inicial.md) | Estruturação inicial da base (docs/skills/agents/plans/agents.md)        | ✅ Entregue | Arquiteto/PM + QA Review |
 | 002 | [`plan-002-correcao-visual.md`](./plan-002-correcao-visual.md)     | Correção visual: logo WhatsApp, horário real e microinterações (PRD 001) | ✅ Entregue | Frontend Dev + QA Review |
 | 003 | [`plan-003-assets-imagens.md`](./plan-003-assets-imagens.md)       | Recuperação e implementação dos assets visuais (PRD 002)                | ⏳ Bloqueado | Frontend Dev + Designer UI + QA Review |
+| 004 | [`plan-004-seo-geo-multiagents.md`](./plan-004-seo-geo-multiagents.md) | Otimizações de SEO e GEO com Multi-Agentes (robots, sitemap, meta, schema, FAQ, SSG) | 🚀 Em execução | SEO-Tech + GEO-Schema + Copywriter + QA |
 
 ## Como criar um novo plano
 
