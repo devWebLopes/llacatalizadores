@@ -25,13 +25,10 @@ import {
   ScrollBounce,
 } from "@/components/motion";
 import { cn } from "@/lib/utils";
+import { WHATSAPP_LINK } from "@/const";
 
-const WHATSAPP = "https://wa.me/5551981935442";
-const WHATSAPP_OPCOES =
-  "https://wa.me/5551981935442?text=" +
-  encodeURIComponent(
-    "Olá! Quero consultar a venda de um catalisador. Posso enviar o modelo do veículo e saber disponibilidade, aplicação e condições?"
-  );
+const WHATSAPP = WHATSAPP_LINK;
+const WHATSAPP_OPCOES = WHATSAPP_LINK;
 const PHONE = "tel:+5551981935442";
 const MAP =
   "https://www.google.com/maps/search/?api=1&query=R.%20Jaime%20Biz%2C%20175%20-%20Scharlau%2C%20S%C3%A3o%20Leopoldo%20-%20RS";

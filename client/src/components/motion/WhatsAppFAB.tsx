@@ -22,8 +22,9 @@ import {
 import { WhatsAppLogoFull } from "@/components/icons/WhatsAppIcon";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { duration, ease } from "@/lib/motion";
+import { WHATSAPP_LINK } from "@/const";
 
-const WHATSAPP = "https://wa.me/5551981935442";
+const WHATSAPP = WHATSAPP_LINK;
 
 const labelVariants = {
   hidden: { opacity: 0, x: 10, width: 0 },

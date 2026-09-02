@@ -14,8 +14,9 @@ import { useScrolled } from "@/hooks/useScrolled";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { duration, ease } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { WHATSAPP_LINK } from "@/const";
 
-const WHATSAPP = "https://wa.me/5551981935442";
+const WHATSAPP = WHATSAPP_LINK;
 
 interface HeaderProps {
   /** Links de navegação — padrão do projeto LLA */

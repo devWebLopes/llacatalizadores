@@ -1,5 +1,11 @@
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
+export const WHATSAPP_MESSAGE =
+  "Olá, olhei o site de vocês e gostaria de mais informações.";
+
+export const WHATSAPP_LINK =
+  "https://wa.me/5551981935442?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+
 // Generate login URL at runtime so redirect URI reflects the current origin.
 export const getLoginUrl = () => {
   const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
