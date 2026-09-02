@@ -2,12 +2,13 @@
 
 Registro numerado de planejamentos de tarefas. Novos planos incrementam o número (`plan-002-...`, `plan-003-...` etc.).
 
-| Nº  | Arquivo                                                            | Tarefa                                                                   | Status      | Agente responsável       |
-| --- | ------------------------------------------------------------------ | ------------------------------------------------------------------------ | ----------- | ------------------------ |
-| 001 | [`plan-001-estrutura-inicial.md`](./plan-001-estrutura-inicial.md) | Estruturação inicial da base (docs/skills/agents/plans/agents.md)        | ✅ Entregue | Arquiteto/PM + QA Review |
-| 002 | [`plan-002-correcao-visual.md`](./plan-002-correcao-visual.md)     | Correção visual: logo WhatsApp, horário real e microinterações (PRD 001) | ✅ Entregue | Frontend Dev + QA Review |
-| 003 | [`plan-003-assets-imagens.md`](./plan-003-assets-imagens.md)       | Recuperação e implementação dos assets visuais (PRD 002)                | ⏳ Bloqueado | Frontend Dev + Designer UI + QA Review |
-| 004 | [`plan-004-seo-geo-multiagents.md`](./plan-004-seo-geo-multiagents.md) | Otimizações de SEO e GEO com Multi-Agentes (robots, sitemap, meta, schema, FAQ, SSG) | 🚀 Em execução | SEO-Tech + GEO-Schema + Copywriter + QA |
+| Nº  | Arquivo                                                                | Tarefa                                                                                | Status                                                 | Agente responsável                                  |
+| --- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------- |
+| 001 | [`plan-001-estrutura-inicial.md`](./plan-001-estrutura-inicial.md)     | Estruturação inicial da base (docs/skills/agents/plans/agents.md)                     | ✅ Entregue                                            | Arquiteto/PM + QA Review                            |
+| 002 | [`plan-002-correcao-visual.md`](./plan-002-correcao-visual.md)         | Correção visual: logo WhatsApp, horário real e microinterações (PRD 001)              | ✅ Entregue                                            | Frontend Dev + QA Review                            |
+| 003 | [`plan-003-assets-imagens.md`](./plan-003-assets-imagens.md)           | Recuperação e implementação dos assets visuais (PRD 002)                              | ⏳ Bloqueado                                           | Frontend Dev + Designer UI + QA Review              |
+| 004 | [`plan-004-seo-geo-multiagents.md`](./plan-004-seo-geo-multiagents.md) | Otimizações de SEO e GEO com Multi-Agentes (robots, sitemap, meta, schema, FAQ, SSG)  | 🚀 Em execução                                         | SEO-Tech + GEO-Schema + Copywriter + QA             |
+| 005 | [`plan-005-venda-catalisadores.md`](./plan-005-venda-catalisadores.md) | PRD para adicionar venda de catalisadores como complemento da reciclagem e manutenção | ✅ Entregue (estrutura — validação comercial pendente) | Frontend Dev + Designer UI + Copywriter + QA Review |
 
 ## Como criar um novo plano
 

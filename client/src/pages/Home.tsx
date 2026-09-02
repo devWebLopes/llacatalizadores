@@ -1,13 +1,16 @@
 /* Direção Llá Catalisadores: Oficina Editorial — composição assimétrica, sinais técnicos, grafite/off-white e Vermelho Catalisador. */
 import {
   ArrowUpRight,
+  Boxes,
   ChevronDown,
   Clock3,
   Instagram,
+  Leaf,
   MapPin,
   Phone,
   Scale,
   ShieldCheck,
+  Wrench,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import {
@@ -24,6 +27,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const WHATSAPP = "https://wa.me/5551981935442";
+const WHATSAPP_OPCOES =
+  "https://wa.me/5551981935442?text=" +
+  encodeURIComponent(
+    "Olá! Quero consultar a venda de um catalisador. Posso enviar o modelo do veículo e saber disponibilidade, aplicação e condições?"
+  );
 const PHONE = "tel:+5551981935442";
 const MAP =
   "https://www.google.com/maps/search/?api=1&query=R.%20Jaime%20Biz%2C%20175%20-%20Scharlau%2C%20S%C3%A3o%20Leopoldo%20-%20RS";
@@ -87,6 +95,29 @@ const acceptedMaterialsList = [
   },
 ];
 
+const vendaSignals = [
+  {
+    icon: Boxes,
+    label: "Variedade",
+    title: "Opções conforme aplicação",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Qualidade",
+    title: "Conferência e orientação LLA",
+  },
+  {
+    icon: Leaf,
+    label: "Emissões",
+    title: "Solução adequada para o sistema do veículo",
+  },
+  {
+    icon: Wrench,
+    label: "Instalação",
+    title: "Orientação para um processo rápido",
+  },
+];
+
 const faqs = [
   {
     question: "A LLA aceita catalisador diesel?",
@@ -112,6 +143,16 @@ const faqs = [
     question: "Quais outros materiais automotivos são recebidos?",
     answer:
       "Além de catalisadores automotivos de todas as marcas e modelos, compramos metais e sucatas automotivas selecionadas. Consulte nossa equipe para checar as condições e materiais aceitos no momento.",
+  },
+  {
+    question: "A LLA também vende catalisadores para veículos?",
+    answer:
+      "Sim. Além de avaliar e reciclar, a LLA orienta você na compra de catalisadores. Envie o modelo do veículo ou uma foto no WhatsApp (51) 98193-5442 para a equipe confirmar disponibilidade, aplicação e condições.",
+  },
+  {
+    question: "Como consultar um catalisador para o meu veículo?",
+    answer:
+      "Chame a equipe no WhatsApp (51) 98193-5442 com o modelo do veículo ou uma foto da peça. A aplicação, a disponibilidade e as condições são confirmadas diretamente por quem entende do assunto, antes de qualquer negociação.",
   },
 ];
 
@@ -146,16 +187,27 @@ export default function Home() {
               <span className="h-px w-10 bg-[#e83a2d]" /> São Leopoldo · RS
             </Reveal>
 
-            <Reveal delay={0.08} as="h1" className="display max-w-[800px] text-[4.2rem] sm:text-[6rem] md:text-[8rem]">
+            <Reveal
+              delay={0.08}
+              as="h1"
+              className="display max-w-[800px] text-[4.2rem] sm:text-[6rem] md:text-[8rem]"
+            >
               Seu catalisador tem <span className="text-[#e83a2d]">valor.</span>
             </Reveal>
 
-            <Reveal delay={0.16} as="p" className="mt-8 max-w-[500px] text-base leading-relaxed text-white/72 md:text-lg">
+            <Reveal
+              delay={0.16}
+              as="p"
+              className="mt-8 max-w-[500px] text-base leading-relaxed text-white/72 md:text-lg"
+            >
               Avaliação direta, atendimento transparente e uma equipe pronta
               para orientar o próximo passo.
             </Reveal>
 
-            <Reveal delay={0.22} className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Reveal
+              delay={0.22}
+              className="mt-9 flex flex-col gap-3 sm:flex-row"
+            >
               <TactileLink
                 href={WHATSAPP}
                 target="_blank"
@@ -190,9 +242,21 @@ export default function Home() {
       <section className="border-b border-[#17191b]/15 bg-[#e83a2d] text-white">
         <Stagger className="container grid grid-cols-1 divide-y divide-white/25 md:grid-cols-3 md:divide-x md:divide-y-0">
           {[
-            { icon: <Scale size={23} />, eyebrow: "Critério", title: "Avaliação clara" },
-            { icon: <ShieldCheck size={23} />, eyebrow: "Relação", title: "Atendimento direto" },
-            { icon: <Clock3 size={23} />, eyebrow: "Local", title: "São Leopoldo" },
+            {
+              icon: <Scale size={23} />,
+              eyebrow: "Critério",
+              title: "Avaliação clara",
+            },
+            {
+              icon: <ShieldCheck size={23} />,
+              eyebrow: "Relação",
+              title: "Atendimento direto",
+            },
+            {
+              icon: <Clock3 size={23} />,
+              eyebrow: "Local",
+              title: "São Leopoldo",
+            },
           ].map(({ icon, eyebrow, title }) => (
             <StaggerItem
               key={title}
@@ -205,7 +269,9 @@ export default function Home() {
                 <div className="eyebrow text-white/65 transition-colors group-hover:text-white">
                   {eyebrow}
                 </div>
-                <strong className="font-display text-2xl uppercase">{title}</strong>
+                <strong className="font-display text-2xl uppercase">
+                  {title}
+                </strong>
               </div>
             </StaggerItem>
           ))}
@@ -238,11 +304,15 @@ export default function Home() {
                   key={number}
                   className="grid gap-4 border-b border-[#17191b]/20 py-7 md:grid-cols-[90px_180px_1fr] md:items-start"
                 >
-                  <span className="font-mono text-sm text-[#e83a2d]">{number}</span>
+                  <span className="font-mono text-sm text-[#e83a2d]">
+                    {number}
+                  </span>
                   <h3 className="font-display text-3xl font-bold uppercase tracking-tight">
                     {title}
                   </h3>
-                  <p className="max-w-[320px] text-sm leading-6 text-[#666a6d]">{text}</p>
+                  <p className="max-w-[320px] text-sm leading-6 text-[#666a6d]">
+                    {text}
+                  </p>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -298,7 +368,9 @@ export default function Home() {
 
                 <div className="relative flex h-full flex-col justify-between">
                   <div className="flex items-start justify-between">
-                    <span className="eyebrow text-white/70">{material.label}</span>
+                    <span className="eyebrow text-white/70">
+                      {material.label}
+                    </span>
                     <span className="font-mono text-xs text-white/55">
                       0{index + 1}
                     </span>
@@ -319,14 +391,14 @@ export default function Home() {
           {/* Lista semântica técnica para SEO & GEO */}
           <Reveal className="mt-12 border-t border-white/10 pt-10">
             <div className="grid gap-8 md:grid-cols-2">
-              {acceptedMaterialsList.map((category) => (
+              {acceptedMaterialsList.map(category => (
                 <div key={category.category} className="space-y-4">
                   <h4 className="eyebrow flex items-center gap-2 text-white/85">
                     <span className="h-1.5 w-1.5 bg-[#e83a2d]" />
                     {category.category}
                   </h4>
                   <ul className="space-y-2.5">
-                    {category.items.map((item) => (
+                    {category.items.map(item => (
                       <li
                         key={item}
                         className="flex items-start gap-3 font-sans text-xs leading-5 text-white/65"
@@ -340,10 +412,92 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-5 text-xs text-white/45">
-              <span>* Condições, cotações e critérios validados presencialmente na bancada.</span>
+              <span>
+                * Condições, cotações e critérios validados presencialmente na
+                bancada.
+              </span>
               <span className="font-mono text-[10px] uppercase tracking-wider text-[#e83a2d]">
                 LLA / Triagem Técnica
               </span>
+            </div>
+          </Reveal>
+
+          {/* Bloco complementar — venda de catalisadores (PRD 003) */}
+          <Reveal className="mt-16 md:mt-20">
+            <div
+              id="venda-catalisadores"
+              className="angled bg-[#f0eee9] p-7 text-[#17191b] md:p-12 lg:p-16"
+            >
+              <div className="grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+                {/* Área A — mensagem e ação */}
+                <div>
+                  <div className="eyebrow red-mark mb-6 text-[#e83a2d]">
+                    04 / solução complementar
+                  </div>
+                  <h3 className="display max-w-[520px] text-5xl md:text-7xl">
+                    Catalisador certo para o{" "}
+                    <span className="text-[#e83a2d]">próximo passo.</span>
+                  </h3>
+                  <p className="mt-6 max-w-[480px] text-sm leading-7 text-[#666a6d] md:text-base">
+                    A LLA também orienta você na compra de catalisadores.
+                    Consulte as opções disponíveis para o seu veículo, confirme
+                    a aplicação e fale com uma equipe que entende do assunto —
+                    sem deixar de lado a reciclagem, a avaliação e a manutenção.
+                  </p>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <TactileLink
+                      href={WHATSAPP_OPCOES}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-3 bg-[#e83a2d] px-6 py-4 text-sm font-bold text-white hover:bg-[#17191b]"
+                    >
+                      Consultar opções no WhatsApp <WhatsAppIcon size={17} />
+                    </TactileLink>
+                    <TactileLink
+                      href="#contato"
+                      className="inline-flex items-center justify-center gap-3 border border-[#17191b]/30 px-6 py-4 text-sm font-semibold text-[#17191b] hover:border-[#e83a2d] hover:text-[#e83a2d]"
+                    >
+                      Falar com a equipe
+                    </TactileLink>
+                  </div>
+                  <p className="mt-5 font-mono text-[11px] leading-5 text-[#666a6d]">
+                    Envie o modelo do veículo ou uma foto. A disponibilidade e
+                    as condições são confirmadas diretamente pela equipe.
+                  </p>
+                </div>
+
+                {/* Área B — sinais de produto (faixa técnica) */}
+                <div className="border-t border-[#17191b]/20 pt-7 lg:border-l lg:border-t-0 lg:pl-12">
+                  <div className="eyebrow mb-2 text-[#666a6d]">
+                    O que considerar
+                  </div>
+                  <ul className="divide-y divide-[#17191b]/15 border-b border-[#17191b]/15">
+                    {vendaSignals.map(({ icon: Icon, label, title }, index) => (
+                      <li
+                        key={label}
+                        className="group flex items-start gap-4 py-5"
+                      >
+                        <span className="mt-0.5 text-[#e83a2d] transition-transform duration-200 group-hover:translate-x-1">
+                          <Icon size={22} />
+                        </span>
+                        <div className="min-w-0">
+                          <div className="eyebrow text-[#666a6d]">{label}</div>
+                          <strong className="mt-1 block font-display text-xl uppercase leading-tight md:text-2xl">
+                            {title}
+                          </strong>
+                        </div>
+                        <span className="ml-auto mt-1 font-mono text-[10px] text-[#17191b]/30">
+                          0{index + 1}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 font-mono text-[11px] leading-5 text-[#666a6d]">
+                    LLA / ORIENTAÇÃO DE COMPRA — disponibilidade, aplicação e
+                    condições confirmadas pela equipe.
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -359,7 +513,9 @@ export default function Home() {
         <div className="container">
           <div className="grid gap-12 md:grid-cols-[.8fr_1.5fr] md:gap-24">
             <Reveal>
-              <div className="eyebrow red-mark mb-6">04 / dúvidas frequentes</div>
+              <div className="eyebrow red-mark mb-6">
+                05 / dúvidas frequentes
+              </div>
               <h2 className="display max-w-[360px] text-6xl md:text-8xl">
                 Perguntas <span className="text-[#e83a2d]">diretas.</span>
               </h2>
@@ -388,7 +544,9 @@ export default function Home() {
                 >
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-display text-2xl uppercase tracking-tight text-[#17191b] transition-colors group-hover:text-[#e83a2d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e83a2d]">
                     <span className="flex items-center gap-3">
-                      <span className="font-mono text-xs text-[#e83a2d]">0{index + 1}</span>
+                      <span className="font-mono text-xs text-[#e83a2d]">
+                        0{index + 1}
+                      </span>
                       {faq.question}
                     </span>
                     <ChevronDown
@@ -416,7 +574,7 @@ export default function Home() {
         <div className="container">
           <div className="grid gap-12 md:grid-cols-[1.1fr_.9fr] md:items-end">
             <Reveal>
-              <div className="eyebrow red-mark mb-6">05 / fale com a LLA</div>
+              <div className="eyebrow red-mark mb-6">06 / fale com a LLA</div>
               <h2 className="display max-w-[680px] text-6xl md:text-[7rem]">
                 Vamos olhar isso <span className="text-[#e83a2d]">juntos?</span>
               </h2>
